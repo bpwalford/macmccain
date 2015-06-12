@@ -9,7 +9,7 @@ class AlbumsController < ApplicationController
   end
 
   def update
-    if @ablum.save
+    if @ablum.save(album_params)
       redirect_to albums_path, notice: "#{@album.name} successfully updated"
     else
       render :new
