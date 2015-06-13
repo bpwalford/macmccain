@@ -1,9 +1,8 @@
 
-<section class="form login-form well">
-
-  <button class="pull-right exit">x</button>
+<section class="form login-form">
 
   <%= form_for(:session, url: login_path) do |f| %>
+    <h4>Login</h4>
 
     <div class="form-group">
       <%= f.label :email %>
@@ -16,8 +15,10 @@
     </div>
 
     <div class="form-group">
-      <%= f.submit "Login", class: 'btn btn-default pull-right' %>
+      <%= f.submit "Login", class: 'btn btn-default' %>
+      <a href="#" class="exit">cancel</a>
     </div>
+
 
   <% end %>
 
