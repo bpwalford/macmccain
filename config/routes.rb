@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index, :show]
 
-  post 'login'  => 'sessions#create',  as: :login
-  get  'logout' => 'sessions#destroy', as: :logout
-  
+  post 'sign-in'  => 'sessions#create',  as: :login
+  get  'sign-out' => 'sessions#destroy', as: :logout
+
 end

@@ -3,12 +3,11 @@
   %head
     %title MacMccain
     = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
     = csrf_meta_tags
 
-  %body.full
+  %body
 
-    .navbar.navbar-fixed-top{:role => "navigation"}
+    .navbar{:role => "navigation"}
       .container
         .navbar-header
           = link_to "MacMccain", root_path, class: "navbar-brand"
@@ -30,7 +29,9 @@
           - if current_user
             %li= link_to "Logout", logout_path
           - else
-            %li= link_to "Login", new_user_path
+            %li.login-toggle
+              %a Login
 
     .notice
     = yield
+    = javascript_include_tag 'application'
