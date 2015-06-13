@@ -1,20 +1,27 @@
 
 var login = {
   show: function () {
-    $('.login-form').slideDown();
+    $('.login-form').show();
   },
   hide: function () {
-    $('.login-form').slideUp();
+    $('.login-form').hide();
   }
 }
 
-$('.login-toggle').click(function () {
-  login.show();
-})
+$(function () {
+  setTimeout(function () {
+      $('.notice').fadeOut(3000);
+  }, 2000);
 
-$('.login-form .exit').click(function () {
-  login.hide();
-})
+  $('.login-toggle').click(function () {
+    login.show();
+  })
+
+  $('.login-form .exit').click(function () {
+    login.hide();
+  })
+});
+
 
 // if ( !$('.login-form').hasClass('display-none') ) {
 //   $('body').click(function () {

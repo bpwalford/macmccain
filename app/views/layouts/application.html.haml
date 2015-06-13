@@ -32,6 +32,8 @@
             %li.login-toggle
               %a Login
 
-    .notice
+    - if notice != nil
+      %p.notice.alert.alert-success.col-md-6.col-md-offset-3.text-center=notice
+
     = yield
     = javascript_include_tag 'application'
