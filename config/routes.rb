@@ -8,4 +8,8 @@ Rails.application.routes.draw do
     resources :songs, only: [:index, :show, :update]
   end
 
+  resources :users, except: [:index, :show]
+
+  post 'login'  => 'sessions#create',  as: :login
+  get  'logout' => 'sessions#destroy', as: :logout
 end
