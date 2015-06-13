@@ -8,9 +8,19 @@
 
 @import "colors";
 @import "mixins";
-@import "home";
 @import "form";
 
 *, *:before, *:after {
   box-sizing: border-box;
+}
+
+body {
+  background: url('Mac21.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.navbar {
+  background: white;
+  // opacity: 0.2;
+  
 }
