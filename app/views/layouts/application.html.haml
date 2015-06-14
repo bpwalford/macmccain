@@ -30,6 +30,10 @@
         - else
           %li.login-toggle
             %a Login
+        - if current_user && current_user.admin
+          %li= link_to "Admin", admin_path
+
+    = render 'pages/login'
 
     - if notice != nil
       %p.notice.alert.alert-success.col-md-6.col-md-offset-3.text-center=notice

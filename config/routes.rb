@@ -13,4 +13,11 @@ Rails.application.routes.draw do
   post 'sign-in'  => 'sessions#create',  as: :login
   get  'sign-out' => 'sessions#destroy', as: :logout
 
+  namespace :admin do
+    get '/' => 'admin#index'
+    get 'purchases' => 'admin#purchases'
+    get 'songs' => 'admin#songs'
+    get 'users' => 'admin#users'
+  end
+
 end

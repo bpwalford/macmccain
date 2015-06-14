@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:update, :destroy]
 
-  # TODO add admin side to browse users
-  # def index
-  # end
-
   def new
     @user = User.new
   end
