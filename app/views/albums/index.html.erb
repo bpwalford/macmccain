@@ -1,1 +1,15 @@
-<h1>albums</h1>
+<section class="albums-page">
+
+  <h1 class="page-header">Albums</h1>
+
+  <% @albums.sort.each do |album| %>
+    <div class="album-cover">
+      <div class="title-container">
+        <h4> <%= album.name %> </h4>
+      </div>
+
+      <%= image_tag "#{album.name.downcase.gsub(' ', '_')}.jpg" %>
+    </div>
+  <% end %>
+
+</section>

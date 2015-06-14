@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   before_action :set_album, except: [:index]
 
   def index
-    @albums = Album.all
+    @albums = Album.all.sort_by { |album| album.name.downcase }
   end
 
   def show
