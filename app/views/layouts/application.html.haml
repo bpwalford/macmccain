@@ -4,6 +4,7 @@
     %title MacMccain
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato", :rel => "stylesheet", :type => "text/css"}/
 
   %body
 
@@ -23,14 +24,11 @@
                 Music
                 %span.caret
               %ul.dropdown-menu{"role" => "menu"}
-                %li.divider
-                %li= link_to "Albums", albums_path, class: "nav-text"
-                %li.divider
-                %li= link_to "all MAC too McCain easy", root_path, class: "nav-text"
-                %li= link_to "Color of Everything", root_path, class: "nav-text"
-                %li= link_to "Perfect World", root_path, class: "nav-text"
-                %li= link_to "Rhythm and Dues", root_path, class: "nav-text"
-                %li.divider
+                %li= link_to "Albums", albums_path, class: "nav-album-title"
+                %li= link_to "\u2022 all MAC too McCain easy", root_path
+                %li= link_to "\u2022 Color of Everything", root_path
+                %li= link_to "\u2022 Perfect World", root_path
+                %li= link_to "\u2022 Rhythm and Dues", root_path
             %li= link_to "Contact", root_path
             - if current_user
               %li= link_to "Logout", logout_path

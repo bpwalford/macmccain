@@ -3,6 +3,7 @@
 .navbar {
   background-color: rgba(255, 255, 255, 0.3);
   border-bottom: none;
+  font-family: 'Lato', sans-serif;
 
   @media (max-width: $break-point) {
     background-color: transparent;
@@ -15,16 +16,35 @@
   }
 }
 
-.navbar .nav > li > a {
-  color: black;
+.navbar .nav > li > a,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
   font-weight: 500;
+  color: #555;
+
+  @media (max-width: $break-point) {
+    background-color: #e7e7e7;
+  }
 }
 
-.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-  color: black;
-  font-weight: 500;
+.navbar-nav > li > .dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  margin-top: 6px;
+}
+
+.nav-album-title {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
   font-size: 26px;
+
+  a {
+    color: gray;
+
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
 }
