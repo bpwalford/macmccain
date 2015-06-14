@@ -7,38 +7,46 @@
 
   %body
 
-    .navbar{:role => "navigation"}
-      .navbar-header
-        = link_to "MacMccain", root_path, class: "navbar-brand"
-      %ul.nav.navbar-nav.pull-right
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => albums_path}
-            Albums
-            %span.caret
-          %ul.inverse-dropdown.dropdown-menu{:role => "menu"}
-            %li.divider
-            %li= link_to "all MAC too McCain easy", root_path
-            %li.divider
-            %li= link_to "Color of Everything", root_path
-            %li.divider
-            %li= link_to "Perfect World", root_path
-            %li.divider
-            %li= link_to "Rhythm and Dues", root_path
-        %li= link_to "Contact", root_path
-        - if current_user
-          %li= link_to "Logout", logout_path
-        - else
-          %li.login-toggle
-            %a Login
-        - if current_user && current_user.admin
-          %li= link_to "Admin", admin_path
+    .navbar.navbar-default
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"type" => "button", "data-toggle" => "collapse", "data-target" => "#navbar-collapse-1"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          .navbar-brand= link_to "MacMccain", root_path
+        .collapse.navbar-collapse.pull-right#navbar-collapse-1
+          %ul.nav.navbar-nav
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", "role" => "button"}
+                Music
+                %span.caret
+              %ul.dropdown-menu{"role" => "menu"}
+                %li.divider
+                %li= link_to "Albums", albums_path, class: "nav-text"
+                %li.divider
+                %li= link_to "all MAC too McCain easy", root_path, class: "nav-text"
+                %li= link_to "Color of Everything", root_path, class: "nav-text"
+                %li= link_to "Perfect World", root_path, class: "nav-text"
+                %li= link_to "Rhythm and Dues", root_path, class: "nav-text"
+                %li.divider
+            %li= link_to "Contact", root_path
+            - if current_user
+              %li= link_to "Logout", logout_path
+            - else
+              %li.login-toggle
+                %a Login
+            - if current_user && current_user.admin
+              %li= link_to "Admin", admin_path
 
-    = render 'pages/login'
+    .container
+      = render 'pages/login'
 
-    - if notice != nil
-      %p.notice.alert.alert-success.col-md-6.col-md-offset-3.text-center=notice
+      - if notice != nil
+        %p.notice.alert.alert-success.col-md-6.col-md-offset-3.text-center=notice
 
-    = yield
+      = yield
 
     .footer
       %p.text-center copyright 2015

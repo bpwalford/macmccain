@@ -8,6 +8,7 @@
 @import "colors";
 @import "mixins";
 @import "form";
+@import "navbar";
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -18,11 +19,8 @@ body {
   background-size: cover;
 }
 
-.navbar, .footer {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
 .footer {
+  background-color: rgba(255, 255, 255, 0.3);
   position: fixed;
   bottom: 0;
   width: 100%;
