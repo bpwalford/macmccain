@@ -1,0 +1,46 @@
+@import 'colors';
+
+.contact-form {
+
+  .page-header {
+    border-bottom: solid 1px $header-line;
+  }
+
+  .left, .right {
+    float :left;
+    width: 50%;
+    padding: 5%;
+
+    label {
+      position: relative;
+      margin-bottom: 10px;
+
+      &:after {
+        content: '';
+        width: 150px;
+        height: 1px;
+        background: $header-line;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+      }
+    }
+
+    @media (max-width: $break-point) {
+      width: 100%;
+      padding: 5% 10%;
+
+      label {
+        background-color: $clear;
+        padding: 0% 5%;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .right {
+    text-area .form-control {
+      height: 180px !important;
+    }
+  }
+}

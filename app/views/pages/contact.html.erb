@@ -1,16 +1,32 @@
-<h1>Contact</h1>
+<section class="contact-form">
+  <h1 class="page-header">Contact</h1>
 
-<hr>
+  <%= form_for(:contact, url: notify_path) do |f| %>
+    <div class="left">
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field  :email, class: "form-control", required: "required" %>
+      </div>
 
-<%= form_for(:contact, url: notify_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field  :email %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :subject %>
-  <%= f.text_field :subject %>
-  <%= f.label :message %>
-  <%= f.text_area :message %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", required: "required" %>
+      </div>
 
-  <%= f.submit "Submit" %>
-<% end %>
+      <div class="form-group">
+        <%= f.label :subject %>
+        <%= f.text_field :subject, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="form-group">
+        <%= f.label :message %>
+        <%= f.text_area :message, class: "form-control", required: "required", rows: "9" %>
+      </div>
+
+      <%= f.submit "Submit", class: "btn btn-default pull-right" %>
+    </div>
+
+  <% end %>
+</section>
