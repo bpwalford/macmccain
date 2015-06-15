@@ -21,6 +21,12 @@
     float: left;
     text-align: center;
     margin: 20px 0px;
+    padding-bottom: 26px;
+    color: black;
+
+    @media (max-width: $break-point) {
+      width: 100%;
+    }
 
     .title-container {
       position: relative;
@@ -35,6 +41,10 @@
         bottom: -4px;
         left: 25%;
       }
+    }
+
+    &:hover {
+      background: white;
     }
   }
 }
