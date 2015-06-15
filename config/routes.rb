@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   root 'pages#index', as: :root
 
-  get 'contact' => 'pages#contact', as: :contact
+  get  'contact' => 'pages#contact', as: :contact
+  post 'notify'  => 'pages#notify',  as: :notify
 
   resources :albums, only: [:index, :show, :update] do
     resources :songs, only: [:index, :show, :update]
