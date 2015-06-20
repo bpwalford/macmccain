@@ -27,7 +27,7 @@
                 %li= link_to "Albums", albums_path, class: "nav-album-title"
                 - albums = Album.all
                 - albums.each do |album|
-                  %li= link_to "\u2022 #{album.name}", album_path(album)
+                  %li= link_to "\u2022 #{album.name}", album_songs_path(album)
             %li= link_to "Contact", contact_path
             - if current_user
               %li= link_to "Logout", logout_path

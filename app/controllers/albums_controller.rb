@@ -5,9 +5,6 @@ class AlbumsController < ApplicationController
     @albums = Album.all.sort_by { |album| album.name.downcase }
   end
 
-  def show
-  end
-
   def update
     if @ablum.save(album_params)
       redirect_to albums_path, notice: "#{@album.name} successfully updated"

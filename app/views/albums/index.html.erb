@@ -3,7 +3,7 @@
   <h1 class="page-header">Albums</h1>
 
   <% @albums.sort.each do |album| %>
-    <%= link_to album_path(album) do %>
+    <%= link_to album_songs_path(album) do %>
       <div class="album-cover">
         <div class="title-container">
           <h4> <%= album.name %> </h4>

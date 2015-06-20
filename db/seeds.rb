@@ -16,6 +16,8 @@ User.create!(
   password_confirmation: 'asdf'
 )
 
+
+# Songs are in order
 music = {
   "Rhythm and Dues" => [
     "It's You I Love",
@@ -32,7 +34,7 @@ music = {
     "I Do",
     "Color of Everything",
     "Head Game",
-    "Winner",
+    "Winners",
     "Bluejeans",
     "OK",
     "Bobby can Play",

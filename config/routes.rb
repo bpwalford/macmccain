@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get  'contact' => 'pages#contact', as: :contact
   post 'notify'  => 'pages#notify',  as: :notify
 
-  resources :albums, only: [:index, :show, :update] do
-    resources :songs, only: [:index, :show, :update]
+  resources :albums, only: [:index] do
+    resources :songs, only: [:index]
   end
 
   resources :users, except: [:index, :show]
