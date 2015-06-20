@@ -1,0 +1,20 @@
+@import 'colors';
+
+.songs {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: $clear;
+  border-radius: 4px;
+
+  .table {
+
+    tbody > tr > td {
+      vertical-align: middle;
+    }
+
+    tr td span {
+      font-size: 1.6em;
+    }
+  }
+}

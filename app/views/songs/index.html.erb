@@ -1,5 +1,35 @@
-<h1> Songs </h1>
-<% @songs.all.each do |song| %>
-  <%= song.title %>
-  <hr>
-<% end %>
+<section class="songs">
+  <h1 class="page-header"> <%= @album.name %> </h1>
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Listen</th>
+          <th>Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @songs.each do |song| %>
+          <tr>
+            <td class="title">
+              <%= song.title %>
+            </td>
+            <td class="play">
+              <%= link_to(
+                content_tag(:span, '', class: 'glyphicon glyphicon-play-circle'),
+                "/#{@album_path}/#{song.title.downcase.gsub(' ', '_')}.mp3") %>
+            </td>
+            <td class="download">
+              <%= link_to(
+                content_tag(:span, '', class: 'glyphicon glyphicon-cloud-download'),
+                download_song_path(album: @album.name, song: song.title)
+              ) %>
+           </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
