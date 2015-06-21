@@ -29,16 +29,13 @@
                 - albums.each do |album|
                   %li= link_to "\u2022 #{album.name}", album_songs_path(album)
             %li= link_to "Contact", contact_path
+            %li= link_to "Donate", root_path
             - if current_user
               %li= link_to "Logout", logout_path
-            - else
-              %li.login-toggle
-                %a Login
             - if current_user && current_user.admin
               %li= link_to "Admin", admin_path
 
     .container
-      = render 'pages/login'
 
       - if notice != nil
         %p.notice.alert.alert-success.col-md-6.col-md-offset-3.text-center=notice

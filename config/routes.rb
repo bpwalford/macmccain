@@ -16,12 +16,9 @@ Rails.application.routes.draw do
     get '/' => 'admin#index'
     get 'purchases' => 'admin#purchases'
     get 'songs' => 'admin#songs'
-    get 'users' => 'admin#users'
   end
 
-# -----------------------------------------------
-  resources :users, except: [:index, :show]
-
+  get  'login'    => 'sessions#login',   as: :sign_in
   post 'sign-in'  => 'sessions#create',  as: :login
   get  'sign-out' => 'sessions#destroy', as: :logout
 end
