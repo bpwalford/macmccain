@@ -6,6 +6,20 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def donate
+  end
+
+  def process_donation
+    donation = Donation.new(donation_params)
+    binding.pry
+    if donation.save
+      # process
+      redirect_to root_path
+    else
+      render :donate
+    end
+  end
+
   def notify
     name    = params[:contact][:name]
     email   = params[:contact][:email]

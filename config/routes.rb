@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get  'contact' => 'pages#contact', as: :contact
   post 'notify'  => 'pages#notify',  as: :notify
+  get  'donate'  => 'pages#donate',  as: :donate
+  post 'process' => 'pages#process_donation', as: :process
 
   resources :albums, only: [:index] do
     resources :songs, only: [:index]

@@ -1,0 +1,17 @@
+<section class="donation">
+  <%= form_for(:donation, url: process_path) do |f|%>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+
+    <%= f.submit 'Submit' %>
+  <% end %>
+</section>

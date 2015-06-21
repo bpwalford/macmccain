@@ -2,6 +2,7 @@ User.delete_all
 Song.delete_all
 Album.delete_all
 Purchase.delete_all
+Donation.delete_all
 
 User.create!(
   email: 'asdf@asdf.com',
@@ -9,13 +10,6 @@ User.create!(
   password_confirmation: 'asdf',
   admin: true
 )
-
-User.create!(
-  email: 'a@a.com',
-  password: 'asdf',
-  password_confirmation: 'asdf'
-)
-
 
 # Songs are in order
 music = {
