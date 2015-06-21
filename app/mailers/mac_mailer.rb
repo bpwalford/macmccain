@@ -7,8 +7,15 @@ class MacMailer < ApplicationMailer
     @email = email
     @message = message
 
-# TODO this should be macs address
     mail(to: "bpwalford@gmail.com", subject: subject)
+  end
+
+  def donation_received(donation)
+    @name = (donation.full_name == " ") ? "Anonymous" : donation.full_name.strip
+    @message = donation.message
+    @amount = donation.amount
+
+    mail(to: "bpwalford@gmail.com", subject: "Donation Received!")
   end
 
 end

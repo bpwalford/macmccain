@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h4>You've Received a Donation!</h4>
+
+    <p> <%= @name %> donated $<%= @amount.to_f %> </p>
+
+    <% if @message != nil && @message != "" %>
+      <p> <%= @name %> also left you the following message: </p>
+
+      <p> <%= @message %> </p>
+    <% end %>
+
+  </body>
+</html>

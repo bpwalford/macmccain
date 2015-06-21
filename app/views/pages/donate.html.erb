@@ -1,4 +1,15 @@
 <section class="donation">
+
+  <% if @donation.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @donation.errors.full_messages.each do |message| %>
+          <li> <%= message %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= form_for(:donation, url: process_path) do |f|%>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
