@@ -45,7 +45,7 @@ music = {
     "All Too Easy",
     "You're an Island",
     "Gypsy",
-    "Win You Love",
+    "Win Your Love",
     "Be With You",
     "When it Comes to Love",
     "Speechless",
@@ -66,7 +66,7 @@ music = {
     "Hot Fudge",
     "Winners",
     "Head Game",
-    "Gypse",
+    "Gypsy",
     "F.M.B.Q."
   ]
 }

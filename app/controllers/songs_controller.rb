@@ -7,23 +7,23 @@ class SongsController < ApplicationController
   end
 
   def download_album
-    song = params[:album]
+    # song = params[:album]
 
-    file = "#{album.downcase.gsub(' ', '_')}.zip"
+    # file = "#{album.downcase.gsub(' ', '_')}.zip"
 
-    send_file("#{Rails.root}/public/albums/#{file}")
+    # send_file("#{Rails.root}/public/albums/#{file}")
   end
 
   def download_song
-    song  = params[:song]
-    album = params[:album]
+    song  = Song.find_by(id: params[:song])
+    album = Album.find_by(id: params[:album])
 
-    song_file = "#{song.downcase.gsub(' ', '_')}.mp3"
-    album_dir = album.downcase.gsub(' ', '_')
+    song_file = "#{song.format_name.downcase}.mp3"
+    album_dir = album.format_name.downcase
 
     send_file(
       "#{Rails.root}/public/#{album_dir}/#{song_file}",
-      filename: "#{song.gsub(' ', '-')}.mp3",
+      filename: "#{song.format_name}.mp3",
       type: "application/mp3"
     )
   end
@@ -32,10 +32,6 @@ class SongsController < ApplicationController
 
   def set_album
     @album = Album.find(params[:album_id])
-  end
-
-  def song_params
-    params.require(:song).permit(:title, :price)
   end
 
 end

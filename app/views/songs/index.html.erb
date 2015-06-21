@@ -19,12 +19,12 @@
             <td class="play">
               <%= link_to(
                 content_tag(:span, '', class: 'glyphicon glyphicon-play-circle'),
-                "/#{@album_path}/#{song.title.downcase.gsub(' ', '_')}.mp3") %>
+                "/#{@album_path}/#{song.format_name}.mp3") %>
             </td>
             <td class="download">
               <%= link_to(
                 content_tag(:span, '', class: 'glyphicon glyphicon-cloud-download'),
-                download_song_path(album: @album.name, song: song.title)
+                download_song_path(album: @album.id, song: song.id)
               ) %>
            </td>
           </tr>
