@@ -4,16 +4,18 @@ class Admin::AdminController < ApplicationController
   def index
   end
 
-  def users
-    @users = User.all
-  end
-
-  def purchases
-    @purchases = Purchase.all
-  end
-
   def songs
-    @songs = Song.all
+    @songs = Song.where('downloads > ?', 0).page(params[:page]).per(10)
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def donations
+    @donations = Donation.page(params[:page]).per(10)
+    respond_to do |format|
+      format.js 
+    end
   end
 
 end

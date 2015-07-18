@@ -1,0 +1,19 @@
+<section class="downloads">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Song</th>
+        <th>Downloads</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @songs.each do |song| %>
+      <tr>
+        <td> <%= song.title %> </td>
+        <td> <%= song.downloads %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @songs, remote: true %>
+</section>

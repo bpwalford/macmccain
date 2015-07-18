@@ -33,17 +33,11 @@ ActiveRecord::Schema.define(version: 20150621160143) do
     t.datetime "updated_at"
   end
 
-  create_table "purchases", force: :cascade do |t|
-    t.integer  "song_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "songs", force: :cascade do |t|
     t.integer  "album_id"
     t.string   "title"
     t.decimal  "price",      precision: 8, scale: 2
+    t.integer  "downloads"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/' => 'admin#index', as: :home
+    get 'songs' => 'admin#songs'
+    get 'donations' => 'admin#donations'
   end
 
   get  'login'    => 'sessions#login',   as: :sign_in

@@ -1,7 +1,6 @@
 User.delete_all
 Song.delete_all
 Album.delete_all
-Purchase.delete_all
 Donation.delete_all
 
 User.create!(
@@ -76,7 +75,17 @@ music.keys.each do |album|
     Song.create!(
       title: song,
       price: 0.99,
-      album: new_album
+      album: new_album,
+      downloads: rand(0..100)
     )
   end
+end
+
+50.times do
+  Donation.create!(
+    first_name: 'asdf',
+    last_name: 'asdf',
+    message: 'asdf',
+    amount: 10.55
+  )
 end

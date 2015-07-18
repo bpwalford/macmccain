@@ -4,6 +4,7 @@ class CreateSongs < ActiveRecord::Migration
       t.belongs_to :album
       t.string :title
       t.decimal :price, :precision => 8, :scale => 2
+      t.integer :downloads
 
       t.timestamps
     end

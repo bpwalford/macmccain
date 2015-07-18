@@ -1,0 +1,21 @@
+<section class="donations">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Amount</th>
+        <th>From</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @donations.each do |donation| %>
+      <tr>
+        <td> <%= donation.amount %> </td>
+        <td> <%= "#{donation.first_name} #{donation.last_name}" %> </td>
+        <td> <%= donation.created_at.to_date %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @donations, remote: true %>
+</section>
