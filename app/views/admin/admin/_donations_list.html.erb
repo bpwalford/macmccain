@@ -1,21 +1,29 @@
-<section class="donations">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Amount</th>
-        <th>From</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @donations.each do |donation| %>
-      <tr>
-        <td> <%= donation.amount %> </td>
-        <td> <%= "#{donation.first_name} #{donation.last_name}" %> </td>
-        <td> <%= donation.created_at.to_date %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= paginate @donations, remote: true %>
-</section>
+<div class="donations-table">
+
+  <h1 class="page-header">Donation History</h1>
+
+  <% if @donations.count == 0 %>
+    <h3>no donations yet...</h3>
+  <% else %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>From</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @donations.each do |donation| %>
+        <tr>
+          <td> <%= donation.amount %> </td>
+          <td> <%= "#{donation.first_name} #{donation.last_name}" %> </td>
+          <td> <%= donation.created_at.to_date %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @donations, remote: true %>
+  <% end %>
+
+</div>

@@ -1,0 +1,19 @@
+@import 'colors';
+
+.admin {
+
+  .songs-table, .donations-table {
+    margin-top: 22px;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: $clear;
+    border-radius: 4px;
+  }
+
+  .songs-table {
+    h1 span {
+      font-size: 15px;
+    }
+  }
+}

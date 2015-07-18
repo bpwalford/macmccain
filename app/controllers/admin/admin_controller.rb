@@ -5,16 +5,16 @@ class Admin::AdminController < ApplicationController
   end
 
   def songs
-    @songs = Song.where('downloads > ?', 0).page(params[:page]).per(10)
+    @songs = Song.where('downloads > ?', 0).page(params[:page]).per(8)
     respond_to do |format|
       format.js
     end
   end
 
   def donations
-    @donations = Donation.page(params[:page]).per(10)
+    @donations = Donation.page(params[:page]).per(8)
     respond_to do |format|
-      format.js 
+      format.js
     end
   end
 

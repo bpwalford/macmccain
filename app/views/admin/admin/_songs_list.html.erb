@@ -1,19 +1,29 @@
-<section class="downloads">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Song</th>
-        <th>Downloads</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @songs.each do |song| %>
-      <tr>
-        <td> <%= song.title %> </td>
-        <td> <%= song.downloads %> </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= paginate @songs, remote: true %>
-</section>
+<div class="songs-table">
+
+  <h1 class="page-header">Song Download History
+    <span> (only displaying songs downloaded at least once)</span>
+  </h1>
+
+  <% if @songs.count == 0 %>
+    <h3>no downloads yet...</h3>
+  <% else %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Song</th>
+          <th>Downloads</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @songs.each do |song| %>
+        <tr>
+          <td> <%= song.title %> </td>
+          <td> <%= song.downloads %> </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @songs, remote: true %>
+  <% end %>
+
+</div>
