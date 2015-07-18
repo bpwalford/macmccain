@@ -8,7 +8,8 @@ module AuthHelper
   end
 
   def ensure_admin
-    unless current_user.admin
+    unless current_user && current_user.admin
+      session.destroy
       raise AccessDenied
     end
   end

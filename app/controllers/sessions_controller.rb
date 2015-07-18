@@ -8,7 +8,12 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to albums_path
+      if user.admin == true
+        redirect_to admin_home_path
+      else
+        session.destroy
+        raise AccessDenied
+      end
     else
       redirect_to root_path, notice: 'username or password was not valid'
     end

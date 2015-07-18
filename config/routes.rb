@@ -17,9 +17,7 @@ Rails.application.routes.draw do
   get 'album' => 'songs#download_album', as: :download_album
 
   namespace :admin do
-    get '/' => 'admin#index'
-    get 'purchases' => 'admin#purchases'
-    get 'songs' => 'admin#songs'
+    get '/' => 'admin#index', as: :home
   end
 
   get  'login'    => 'sessions#login',   as: :sign_in
