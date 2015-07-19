@@ -24,6 +24,45 @@ body {
   margin-bottom: 60px;
 }
 
+.home-page {
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: $clear;
+  border-radius: 4px;
+  width: 75%;
+  margin-left: 20px;
+
+  h1 {
+    font-size: 6em;
+    color: white;
+
+    @media (max-width: 995px) {
+      font-size: 5em;
+    }
+    @media (max-width: 700px) {
+      font-size: 4em;
+    }
+    @media (max-width: 575px) {
+      font-size: 3em;
+    }
+    @media (max-width: 451px) {
+      font-size: 2em;
+    }
+  }
+
+  span a {
+    margin-top: 12px;
+    background-color: white;
+    color: gray;
+    border: none;
+
+    &:hover {
+      background-color: #428BFF;
+      color: white;
+    }
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
 }

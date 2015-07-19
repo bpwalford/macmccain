@@ -1,5 +1,13 @@
-<section class="songs">
-  <h1 class="page-header"> <%= @album.name %> </h1>
+<section class="songs <%= @album.format_name.downcase %>">
+
+  <!-- <div class="album-header page-header">
+    <div class="album-art">
+      <img src="<%= image_url("#{@album.format_name.downcase}.jpg") %>" />
+    </div>
+    <h1> <%= @album.name %> </h1>
+  </div> -->
+
+  <h1 class="page-header"> <%= @album.name %></h1>
 
   <div class="table-responsive">
     <table class="table table-hover">
