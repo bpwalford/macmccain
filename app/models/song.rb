@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
       ' ' => '_', '\'' => '', '(' => '', ')' => '', '.' => ''
     }
 
-    self.title.gsub(/./) { |char| replacements.fetch(char, char) }
+    self.title.gsub(/./) { |char| replacements.fetch(char, char) }.downcase
   end
 
 end
