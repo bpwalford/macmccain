@@ -21,6 +21,9 @@ class SongsController < ApplicationController
     song_file = "#{song.format_name.downcase}.mp3"
     album_dir = album.format_name.downcase
 
+    song.downloads ? song.downloads += 1 : song.downloads = 1
+    song.save
+
     send_file(
       "#{Rails.root}/public/#{album_dir}/#{song_file}",
       filename: "#{song.format_name}.mp3",

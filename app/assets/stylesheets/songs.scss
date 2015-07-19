@@ -7,12 +7,20 @@
   background-color: $clear;
   border-radius: 4px;
 
-  // .album-header {
-  //   .album-art, h1 {
-  //     float: left;
-  //     // clear: left;
-  //   }
-  // }
+  .page-header {
+    border-bottom: solid 1px gray;
+  }
+  .page-header span a {
+    border: none;
+    font-weight: bold;
+    background-color: #428BFF;
+    color: white;
+
+    &:hover {
+      background-color: white;
+      color: gray;
+    }
+  }
 
   .table {
 
@@ -22,6 +30,10 @@
 
     tr td span {
       font-size: 1.6em;
+    }
+
+    tr td .words {
+      font-size: 14px;
     }
   }
 }

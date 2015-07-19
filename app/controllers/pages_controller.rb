@@ -24,9 +24,9 @@ class PagesController < ApplicationController
     if params[:process] == Rails.application.secrets.payment_success
       donation = Donation.find(params[:id])
       MacMailer.donation_received(donation).deliver_now
-    else
-      redirect_to albums_path
     end
+
+    redirect_to albums_path
   end
 
   def notify

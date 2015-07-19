@@ -1,15 +1,18 @@
 @import 'colors';
-
 .navbar {
   background-color: $clear;
   border-bottom: none;
   font-family: 'Lato', sans-serif;
 
+  .navbar-nav > li > .dropdown-menu {
+    background-color: white;
+  }
+
   @media (max-width: $break-point) {
     background-color: transparent;
 
     .navbar-collapse {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: white;
       padding: 0% 3%;
       margin-right: 1px;
     }

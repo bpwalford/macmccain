@@ -1,21 +1,31 @@
 <section class="songs <%= @album.format_name.downcase %>">
 
-  <!-- <div class="album-header page-header">
-    <div class="album-art">
-      <img src="<%= image_url("#{@album.format_name.downcase}.jpg") %>" />
-    </div>
-    <h1> <%= @album.name %> </h1>
-  </div> -->
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="<%= "active" if "all MAC too McCain easy" == @album.name %>">
+      <%= link_to "all MAC too McCain easy", album_songs_path(Album.find_by(name: "all MAC too McCain easy")) %>
+    </li>
+    <li role="presentation" class="<%= "active" if "Color of Everything" == @album.name %>">
+      <%= link_to "Color of Everything", album_songs_path(Album.find_by(name: "Color of Everything")) %>
+    </li>
+    <li role="presentation" class="<%= "active" if "Perfect World" == @album.name %>">
+      <%= link_to "Perfect World", album_songs_path(Album.find_by(name: "Perfect World")) %>
+    </li>
+    <li role="presentation" class="<%= "active" if "Rhythm and Dues" == @album.name %>">
+      <%= link_to "Rhythm and Dues", album_songs_path(Album.find_by(name: "Rhythm and Dues")) %>
+    </li>
+  </ul>
 
-  <h1 class="page-header"> <%= @album.name %></h1>
+  <h1 class="page-header"> <%= @album.name %>
+    <span class="donate-button"> <%= link_to 'Donate', donate_path, class: 'btn btn-default pull-right' %></span>
+  </h1>
 
   <div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr>
           <th>Title</th>
-          <th>Listen</th>
-          <th>Download</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -25,11 +35,13 @@
               <%= song.title %>
             </td>
             <td class="play">
+              <span class="words">Listen&nbsp&nbsp&nbsp&nbsp</span>
               <%= link_to(
                 content_tag(:span, '', class: 'glyphicon glyphicon-play-circle'),
                 "/#{@album_path}/#{song.format_name}.mp3") %>
             </td>
             <td class="download">
+              <span class="words">Download&nbsp&nbsp&nbsp&nbsp</span>
               <%= link_to(
                 content_tag(:span, '', class: 'glyphicon glyphicon-cloud-download'),
                 download_song_path(album: @album.id, song: song.id)

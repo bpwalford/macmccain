@@ -6,8 +6,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "colors";
-@import "form";
+@import "login";
 @import "navbar";
+@import "donate";
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -57,7 +58,7 @@ body {
     border: none;
 
     &:hover {
-      background-color: #428BFF;
+      background-color: $blue;
       color: white;
     }
   }
