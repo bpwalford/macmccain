@@ -27,35 +27,34 @@ body {
 
 .home-page {
   padding: 19px;
-  margin-bottom: 20px;
   background-color: $clear;
-  border-radius: 4px;
-  width: 75%;
-  margin-left: 20px;
+  border-radius: 10px;
+  width: 35%;
+  height: 405px;
+  margin-left: -8%;
+  margin-top: 100px;
+
+  @media(max-width: 1330px) {margin-left: -4%}
+  @media(max-width: 1000px) {
+    width: 75%;
+    margin-left: 12.5%;
+  }
 
   h1 {
     font-size: 6em;
     color: white;
+    margin-bottom: 40px;
 
-    @media (max-width: 995px) {
-      font-size: 5em;
-    }
-    @media (max-width: 700px) {
-      font-size: 4em;
-    }
-    @media (max-width: 575px) {
-      font-size: 3em;
-    }
-    @media (max-width: 451px) {
-      font-size: 2em;
-    }
+    @media (max-width: 1203px) {font-size: 5em;}
+    @media (max-width: 1000px) {font-size: 6em;}
+    @media (max-width: 558px) {font-size: 4em;}
   }
 
   span a {
-    margin-top: 12px;
     background-color: white;
     color: gray;
     border: none;
+    margin-top: 40px;
 
     &:hover {
       background-color: $blue;
