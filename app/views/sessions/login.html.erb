@@ -4,8 +4,8 @@
     <h4>Login</h4>
 
     <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.label :username %>
+      <%= f.text_field :email, class: 'form-control' %>
     </div>
 
     <div class="form-group">
@@ -15,7 +15,6 @@
 
     <div class="form-group">
       <%= f.submit "Login", class: 'btn btn-default' %>
-      <!-- <a href="#" class="exit">cancel</a> -->
     </div>
 
   <% end %>

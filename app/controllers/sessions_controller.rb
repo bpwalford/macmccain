@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         raise AccessDenied
       end
     else
-      redirect_to root_path, notice: 'username or password was not valid'
+      redirect_to sign_in_path, notice: 'username or password was not valid'
     end
   end
 
