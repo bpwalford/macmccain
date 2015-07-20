@@ -6,8 +6,8 @@ class MacMailer < ApplicationMailer
     @name = name
     @email = email
     @message = message
-
-    mail(to: "bpwalford@gmail.com", subject: subject)
+    # macmccain441@gmail.com
+    mail(to: "macmccain441@gmail.com", subject: subject)
   end
 
   def donation_received(donation)
@@ -15,7 +15,8 @@ class MacMailer < ApplicationMailer
     @message = donation.message
     @amount = donation.amount
 
-    mail(to: "bpwalford@gmail.com", subject: "Donation Received!")
+    # macmccain441@gmail.com
+    mail(to: "macmccain441@gmail.com", subject: "Donation Received!")
   end
 
 end
